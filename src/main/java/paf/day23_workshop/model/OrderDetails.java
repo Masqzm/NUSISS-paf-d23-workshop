@@ -34,19 +34,14 @@ public class OrderDetails implements Serializable {
     public JsonObject toJson() {
         return Json.createObjectBuilder()
                 .add("order_id", id)
-                .add("order_date", orderDate.toString())
+                .add("order_date", orderDate.toString("dd/MM/yyyy"))
                 .add("customer_id", customerID)
                 .add("total_price", totalPrice)
                 .add("discounted_price", discountedPrice)
                 .add("cost_price", costPrice)
                 .build();
     }
-
-    @Override
-    public String toString() {
-        return "OrderDetails [id=" + id + ", orderDate=" + orderDate + ", customerID=" + customerID + ", totalPrice="
-                + totalPrice + ", discountedPrice=" + discountedPrice + "]";
-    }
+    
     public int getId() {
         return id;
     }
